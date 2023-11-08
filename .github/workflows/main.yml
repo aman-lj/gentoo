@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v1
       - name: Build and push
         run: |
-          docker login ghcr.io -u bigpod98 -p ${{ secrets.GITHUB_TOKEN }}
+          docker login ghcr.io -u aman-lj -p ${{ secrets.GITHUB_TOKEN }}
           docker image build -t aman-lj/gentoo-image:latest .
           docker push aman-lj/gentoo-image:latest
       
