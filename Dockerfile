@@ -1,4 +1,4 @@
 FROM gentoo/stage3
 
-emerge-webrsync
+RUN emerge-webrsync
 
