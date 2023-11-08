@@ -1,0 +1,21 @@
+name: Gentoo image building
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build and push
+        run: |
+          echo "${{ secrets.DOCKERPW }}" | docker login -u "aman-lj" --password stdin
+          docker image build -t aman-lj/gentoo-image:latest .
+          docker push aman-lj/gentoo-image:latest
+      
