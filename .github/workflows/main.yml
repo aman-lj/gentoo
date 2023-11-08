@@ -16,6 +16,6 @@ jobs:
       - name: Build and push
         run: |
           docker login ghcr.io -u aman-lj -p ${{ secrets.GITHUB_TOKEN }}
-          docker image build -t aman-lj/gentoo-image:latest .
+          docker image build -t ghcr.io/aman-lj/gentoo-image:latest .
           docker push ghcr.io/aman-lj/gentoo-image:latest
       
